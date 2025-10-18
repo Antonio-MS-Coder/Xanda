@@ -56,10 +56,6 @@ module.exports = async (req, res) => {
       shipping_address_collection: {
         allowed_countries: ['MX'],
       },
-      // Automatically send receipt emails
-      payment_intent_data: {
-        receipt_email: null,
-      },
     });
 
     console.log('Checkout session created:', session.id);
