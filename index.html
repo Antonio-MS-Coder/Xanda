@@ -444,186 +444,131 @@
         </h2>
 
         <p class="text-neutral-400 text-lg max-w-3xl mx-auto leading-relaxed">
-          Descubre cómo nuestras mermeladas y salsas elevan cada creación. De lo cotidiano a lo extraordinario, cada frasco abre un mundo de posibilidades gastronómicas.
+          Descubre recetas exclusivas creadas con Xanda. Toca cada platillo para ver la receta completa.
         </p>
       </div>
 
-      <!-- Gallery Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <!-- Carousel Container -->
+      <div class="relative max-w-6xl mx-auto">
 
-        <!-- Gallery Item 1: Jamaica + Queso -->
-        <article class="gallery-card fade-in-up group">
-          <div class="aspect-[4/3] bg-neutral-900 rounded-xl overflow-hidden ring-1 ring-neutral-800 relative">
-            <img
-              src="./assets/gallery/jamaica-queso.webp"
-              alt="Jamaica con chile pasilla sobre queso manchego maduro"
-              class="gallery-img"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+        <!-- Carousel Wrapper -->
+        <div class="carousel-container relative overflow-hidden rounded-2xl" id="recipeCarousel">
 
-            <!-- Content Overlay -->
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-amber-400/90 text-neutral-950 text-xs font-semibold rounded-full mb-3">
-                Jamaica con chile pasilla
-              </span>
-              <h3 class="font-playfair text-xl md:text-2xl font-bold text-white mb-2">
-                Tabla de quesos artesanales
-              </h3>
-              <p class="text-neutral-200 text-sm leading-relaxed">
-                El contraste perfecto: la acidez floral de la jamaica con el picor sutil del pasilla sobre queso manchego curado. Una experiencia que sorprende en cada bocado.
-              </p>
+          <!-- Carousel Track -->
+          <div class="carousel-track flex transition-transform duration-500 ease-out" id="carouselTrack">
+
+            <!-- Slide 1: Smash Burger -->
+            <div class="carousel-slide min-w-full relative">
+              <img src="./assets/gallery/burger.webp" alt="Smash Burger de Wagyu con Cebolla + Tocino Xanda" class="w-full h-[500px] md:h-[600px] object-cover rounded-2xl">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent rounded-2xl"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <span class="inline-block px-4 py-1.5 bg-amber-400 text-neutral-950 text-xs font-bold rounded-full mb-4">Cebolla caramelizada + Tocino</span>
+                <h3 class="font-playfair text-3xl md:text-4xl font-bold text-white mb-3">Smash Burger de Wagyu</h3>
+                <p class="text-neutral-200 text-lg mb-6 max-w-2xl">Burger de wagyu jugosa con cheddar añejo. Xanda reemplaza ketchup/BBQ tradicional con dulzor-ahumado brillante.</p>
+                <button onclick="openRecipe(0)" class="btn-recipe">
+                  Ver receta completa
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
 
-        <!-- Gallery Item 2: Cebolla + Burger -->
-        <article class="gallery-card fade-in-up delay-100 group">
-          <div class="aspect-[4/3] bg-neutral-900 rounded-xl overflow-hidden ring-1 ring-neutral-800 relative">
-            <img
-              src="./assets/gallery/cebolla-burger.webp"
-              alt="Hamburguesa gourmet con cebolla caramelizada y tocino"
-              class="gallery-img"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-amber-400/90 text-neutral-950 text-xs font-semibold rounded-full mb-3">
-                Cebolla caramelizada
-              </span>
-              <h3 class="font-playfair text-xl md:text-2xl font-bold text-white mb-2">
-                Burger premium
-              </h3>
-              <p class="text-neutral-200 text-sm leading-relaxed">
-                Eleva cualquier hamburguesa: dulce, ahumado y profundo. La combinación de cebolla lenta y tocino de mezquite crea capas de sabor inolvidables.
-              </p>
+            <!-- Slide 2: Vieiras -->
+            <div class="carousel-slide min-w-full relative">
+              <img src="./assets/gallery/vieiras.webp" alt="Vieiras selladas con Cebolla + Tocino Xanda" class="w-full h-[500px] md:h-[600px] object-cover rounded-2xl">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent rounded-2xl"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <span class="inline-block px-4 py-1.5 bg-amber-400 text-neutral-950 text-xs font-bold rounded-full mb-4">Cebolla caramelizada + Tocino</span>
+                <h3 class="font-playfair text-3xl md:text-4xl font-bold text-white mb-3">Vieiras Selladas</h3>
+                <p class="text-neutral-200 text-lg mb-6 max-w-2xl">Vieiras doradas al hierro sobre puré de papa ahumada. Glaseado elegante con bacon crumble.</p>
+                <button onclick="openRecipe(1)" class="btn-recipe">
+                  Ver receta completa
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
 
-        <!-- Gallery Item 3: Arándano + Steak -->
-        <article class="gallery-card fade-in-up delay-200 group">
-          <div class="aspect-[4/3] bg-neutral-900 rounded-xl overflow-hidden ring-1 ring-neutral-800 relative">
-            <img
-              src="./assets/gallery/arandano-steak.webp"
-              alt="Filete de res con salsa de arándano y mezcal"
-              class="gallery-img"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-amber-400/90 text-neutral-950 text-xs font-semibold rounded-full mb-3">
-                Arándano con mezcal
-              </span>
-              <h3 class="font-playfair text-xl md:text-2xl font-bold text-white mb-2">
-                Carne de res premium
-              </h3>
-              <p class="text-neutral-200 text-sm leading-relaxed">
-                El perfil ácido-terroso con notas minerales complementa la riqueza de la carne. Una fusión sofisticada que define la alta cocina mexicana.
-              </p>
+            <!-- Slide 3: Pato Magret -->
+            <div class="carousel-slide min-w-full relative">
+              <img src="./assets/gallery/pato.webp" alt="Pato Magret con Arándano, Mezcal y Sal de Gusano Xanda" class="w-full h-[500px] md:h-[600px] object-cover rounded-2xl">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent rounded-2xl"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <span class="inline-block px-4 py-1.5 bg-amber-400 text-neutral-950 text-xs font-bold rounded-full mb-4">Arándano + Mezcal</span>
+                <h3 class="font-playfair text-3xl md:text-4xl font-bold text-white mb-3">Pato Magret</h3>
+                <p class="text-neutral-200 text-lg mb-6 max-w-2xl">Pechuga a punto rosa con gastrique de Xanda. Textura mineral de sal de gusano.</p>
+                <button onclick="openRecipe(2)" class="btn-recipe">
+                  Ver receta completa
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
 
-        <!-- Gallery Item 4: Jamaica + Cocktail -->
-        <article class="gallery-card fade-in-up delay-300 group">
-          <div class="aspect-[4/3] bg-neutral-900 rounded-xl overflow-hidden ring-1 ring-neutral-800 relative">
-            <img
-              src="./assets/gallery/jamaica-cocktail.webp"
-              alt="Coctel artesanal con jamaica y chile"
-              class="gallery-img"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-amber-400/90 text-neutral-950 text-xs font-semibold rounded-full mb-3">
-                Jamaica con chile pasilla
-              </span>
-              <h3 class="font-playfair text-xl md:text-2xl font-bold text-white mb-2">
-                Coctelería de autor
-              </h3>
-              <p class="text-neutral-200 text-sm leading-relaxed">
-                Una cucharada transforma un simple gin tonic en una experiencia mexicana contemporánea. Floral, picante, memorable.
-              </p>
+            <!-- Slide 4: Cheesecake -->
+            <div class="carousel-slide min-w-full relative">
+              <img src="./assets/gallery/cheesecake.webp" alt="Cheesecake Vasco con Arándano + Mezcal Xanda" class="w-full h-[500px] md:h-[600px] object-cover rounded-2xl">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent rounded-2xl"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <span class="inline-block px-4 py-1.5 bg-amber-400 text-neutral-950 text-xs font-bold rounded-full mb-4">Arándano + Mezcal</span>
+                <h3 class="font-playfair text-3xl md:text-4xl font-bold text-white mb-3">Cheesecake Vasco</h3>
+                <p class="text-neutral-200 text-lg mb-6 max-w-2xl">Basque cheesecake cremoso con veteado brillante. Balance dulce, ácido y salino.</p>
+                <button onclick="openRecipe(3)" class="btn-recipe">
+                  Ver receta completa
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
 
-        <!-- Gallery Item 5: Cebolla + Charcuterie -->
-        <article class="gallery-card fade-in-up delay-100 group">
-          <div class="aspect-[4/3] bg-neutral-900 rounded-xl overflow-hidden ring-1 ring-neutral-800 relative">
-            <img
-              src="./assets/gallery/cebolla-charcuterie.webp"
-              alt="Tabla de embutidos y quesos con cebolla caramelizada"
-              class="gallery-img"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-amber-400/90 text-neutral-950 text-xs font-semibold rounded-full mb-3">
-                Cebolla caramelizada
-              </span>
-              <h3 class="font-playfair text-xl md:text-2xl font-bold text-white mb-2">
-                Tabla de charcutería
-              </h3>
-              <p class="text-neutral-200 text-sm leading-relaxed">
-                El acompañamiento perfecto para embutidos y quesos curados. El dulce ahumado balancea la salinidad y grasa con elegancia.
-              </p>
+            <!-- Slide 5: Pork Belly -->
+            <div class="carousel-slide min-w-full relative">
+              <img src="./assets/gallery/pork-belly.webp" alt="Panceta laqueada con Jamaica + Pasilla Xanda" class="w-full h-[500px] md:h-[600px] object-cover rounded-2xl">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent rounded-2xl"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <span class="inline-block px-4 py-1.5 bg-amber-400 text-neutral-950 text-xs font-bold rounded-full mb-4">Jamaica + Chile Pasilla</span>
+                <h3 class="font-playfair text-3xl md:text-4xl font-bold text-white mb-3">Panceta Laqueada</h3>
+                <p class="text-neutral-200 text-lg mb-6 max-w-2xl">Pork belly crujiente con glaseado espeso de Jamaica. Piña tatemada y microcilantro.</p>
+                <button onclick="openRecipe(4)" class="btn-recipe">
+                  Ver receta completa
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
 
-        <!-- Gallery Item 6: Arándano + Dessert -->
-        <article class="gallery-card fade-in-up delay-200 group">
-          <div class="aspect-[4/3] bg-neutral-900 rounded-xl overflow-hidden ring-1 ring-neutral-800 relative">
-            <img
-              src="./assets/gallery/arandano-dessert.webp"
-              alt="Postre gourmet con mermelada de arándano y mezcal"
-              class="gallery-img"
-              width="800"
-              height="600"
-              loading="lazy"
-            >
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-amber-400/90 text-neutral-950 text-xs font-semibold rounded-full mb-3">
-                Arándano con mezcal
-              </span>
-              <h3 class="font-playfair text-xl md:text-2xl font-bold text-white mb-2">
-                Postres sofisticados
-              </h3>
-              <p class="text-neutral-200 text-sm leading-relaxed">
-                Sobre panna cotta o helado de vainilla, el mezcal y la sal de gusano añaden complejidad adulta a cualquier postre.
-              </p>
+            <!-- Slide 6: Brie -->
+            <div class="carousel-slide min-w-full relative">
+              <img src="./assets/gallery/brie.webp" alt="Brie al horno con Jamaica + Pasilla Xanda" class="w-full h-[500px] md:h-[600px] object-cover rounded-2xl">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent rounded-2xl"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <span class="inline-block px-4 py-1.5 bg-amber-400 text-neutral-950 text-xs font-bold rounded-full mb-4">Jamaica + Chile Pasilla</span>
+                <h3 class="font-playfair text-3xl md:text-4xl font-bold text-white mb-3">Brie al Horno</h3>
+                <p class="text-neutral-200 text-lg mb-6 max-w-2xl">Rueda de brie fundente coronada con Jamaica. Pecanas tostadas y pimienta rosa.</p>
+                <button onclick="openRecipe(5)" class="btn-recipe">
+                  Ver receta completa
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
             </div>
+
           </div>
-        </article>
 
-      </div>
+          <!-- Carousel Navigation -->
+          <button onclick="prevSlide()" class="carousel-btn carousel-btn-prev" aria-label="Receta anterior">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button onclick="nextSlide()" class="carousel-btn carousel-btn-next" aria-label="Siguiente receta">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
 
-      <!-- CTA -->
-      <div class="mt-12 text-center fade-in-up delay-300">
-        <p class="text-neutral-300 text-lg mb-6">
-          ¿Listo para experimentar con estos sabores?
-        </p>
-        <a href="#sabores" class="btn-primary-large">
-          Explora la colección completa
-        </a>
+          <!-- Carousel Indicators -->
+          <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+            <button onclick="goToSlide(0)" class="carousel-indicator active" data-slide="0"></button>
+            <button onclick="goToSlide(1)" class="carousel-indicator" data-slide="1"></button>
+            <button onclick="goToSlide(2)" class="carousel-indicator" data-slide="2"></button>
+            <button onclick="goToSlide(3)" class="carousel-indicator" data-slide="3"></button>
+            <button onclick="goToSlide(4)" class="carousel-indicator" data-slide="4"></button>
+            <button onclick="goToSlide(5)" class="carousel-indicator" data-slide="5"></button>
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -1125,7 +1070,368 @@
         navbar.classList.remove('scrolled');
       }
     });
+
+    // ==========================================
+    // CAROUSEL FUNCTIONALITY
+    // ==========================================
+
+    let currentSlide = 0;
+    const totalSlides = 6;
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const percentage = -currentSlide * 100;
+      track.style.transform = `translateX(${percentage}%)`;
+
+      // Update indicators
+      document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+        if (index === currentSlide) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+
+    // Auto-advance carousel
+    let autoSlideInterval = setInterval(nextSlide, 5000);
+
+    // Pause on hover
+    const carousel = document.getElementById('recipeCarousel');
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(autoSlideInterval);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) nextSlide();
+      if (touchEndX > touchStartX + 50) prevSlide();
+    }
+
+    // ==========================================
+    // RECIPE MODAL SYSTEM
+    // ==========================================
+
+    const recipes = [
+      {
+        name: "Smash Burger de Wagyu con Cebolla + Tocino",
+        product: "Xanda Cebolla caramelizada con tocino ahumado",
+        image: "./assets/gallery/burger.webp",
+        description: "Burger de wagyu jugosa con cheddar añejo y pepinillos finos. Sustitución de ketchup/BBQ con Xanda Cebolla caramelizada con tocino ahumado.",
+        result: "Dulzor-ahumado brillante que barniza y realza cada bocado.",
+        ingredients: [
+          "200g carne wagyu molida",
+          "2 rebanadas cheddar añejo",
+          "2 cdas Xanda Cebolla caramelizada + tocino",
+          "Pan brioche",
+          "Pepinillos finos",
+          "Mantequilla para el pan"
+        ],
+        instructions: [
+          "Formar bolitas con la carne (no aplanar todavía)",
+          "Calentar plancha o sartén a fuego alto",
+          "Colocar bolita y aplastar con firmeza (técnica smash)",
+          "Cocinar 2 min, voltear, agregar queso",
+          "Tostar pan con mantequilla",
+          "Montar: pan, burger, pepinillos, generosa capa de Xanda",
+          "Tapar y servir inmediatamente"
+        ]
+      },
+      {
+        name: "Vieiras Selladas con Cebolla + Tocino",
+        product: "Xanda Cebolla caramelizada con tocino ahumado",
+        image: "./assets/gallery/vieiras.webp",
+        description: "Vieiras doradas al hierro sobre puré sedoso de papa ahumada. Toque de Xanda como glaseado.",
+        result: "Bacon crumble y microgreens rematan este plato de alta cocina.",
+        ingredients: [
+          "6 vieiras grandes frescas",
+          "1 cda Xanda Cebolla + tocino",
+          "300g papas para puré",
+          "50ml crema ahumada",
+          "30g mantequilla",
+          "Bacon crumble",
+          "Microgreens",
+          "Aceite de oliva",
+          "Sal y pimienta"
+        ],
+        instructions: [
+          "Secar vieiras completamente con papel",
+          "Preparar puré: cocer papas, hacer puré con crema ahumada y mantequilla",
+          "Calentar sartén a fuego muy alto con aceite",
+          "Sellar vieiras 90 seg por lado (doradas pero tiernas)",
+          "Emplatar: base de puré, vieiras encima",
+          "Glasear con Xanda caliente",
+          "Terminar con bacon crumble y microgreens"
+        ]
+      },
+      {
+        name: "Pato Magret con Arándano, Mezcal y Sal de Gusano",
+        product: "Xanda Arándano con mezcal y sal de gusano",
+        image: "./assets/gallery/pato.webp",
+        description: "Pechuga de pato a punto rosa con salsa gastrique elaborada con Xanda.",
+        result: "Terminada con granos de sal de gusano que aportan textura mineral. Cranberries y vaso de mezcal en el montaje.",
+        ingredients: [
+          "1 pechuga de pato magret",
+          "3 cdas Xanda Arándano + mezcal",
+          "2 cdas vinagre balsámico",
+          "1 cdta miel",
+          "Sal de gusano para terminar",
+          "Cranberries frescos",
+          "Sal y pimienta"
+        ],
+        instructions: [
+          "Marcar piel del pato en cuadrícula",
+          "Salar y colocar en sartén fría, piel abajo",
+          "Cocinar a fuego medio 6-8 min (dorar piel, sacar grasa)",
+          "Voltear, cocinar 3-4 min más (punto rosa)",
+          "Reposar 5 min",
+          "Hacer gastrique: calentar Xanda + vinagre + miel hasta reducir",
+          "Rebanar pato, bañar con gastrique",
+          "Terminar con sal de gusano y cranberries"
+        ]
+      },
+      {
+        name: "Cheesecake Vasco con Arándano + Mezcal",
+        product: "Xanda Arándano con mezcal y sal de gusano",
+        image: "./assets/gallery/cheesecake.webp",
+        description: "Basque cheesecake cremoso con veteado brillante de Xanda.",
+        result: "Crumble con sal de gusano + ralladura de naranja fina. Postre de autor con balance dulce, ácido y salino.",
+        ingredients: [
+          "600g queso crema",
+          "200g azúcar",
+          "4 huevos",
+          "200ml crema",
+          "2 cdas harina",
+          "1 cdta vainilla",
+          "4 cdas Xanda Arándano + mezcal",
+          "Sal de gusano",
+          "Ralladura de naranja"
+        ],
+        instructions: [
+          "Precalentar horno a 200°C",
+          "Batir queso crema + azúcar hasta suave",
+          "Agregar huevos de uno en uno",
+          "Incorporar crema, harina, vainilla",
+          "Verter en molde forrado con papel (debe quedar muy líquido)",
+          "Hornear 35-40 min (dorado oscuro arriba, centro tembloroso)",
+          "Enfriar completamente",
+          "Servir con Xanda veteado encima",
+          "Terminar con crumble de sal de gusano y ralladura"
+        ]
+      },
+      {
+        name: "Panceta de Cerdo Laqueada con Jamaica + Pasilla",
+        product: "Xanda Jamaica con chile pasilla",
+        image: "./assets/gallery/pork-belly.webp",
+        description: "Pork belly crujiente en cubos con glaseado espeso de Xanda, reducido con vinagre de manzana.",
+        result: "Piña tatemada y microcilantro para frescura. Hibiscus petals como acento floral-picante.",
+        ingredients: [
+          "500g panceta de cerdo (pork belly)",
+          "4 cdas Xanda Jamaica + chile pasilla",
+          "2 cdas vinagre de manzana",
+          "1 cda salsa de soya",
+          "Piña fresca",
+          "Microcilantro",
+          "Pétalos de hibiscus secos",
+          "Aceite"
+        ],
+        instructions: [
+          "Cortar panceta en cubos de 3cm",
+          "Blanquear en agua hirviendo 10 min",
+          "Secar y freír hasta crujiente",
+          "Hacer glaseado: reducir Xanda + vinagre + soya hasta espeso",
+          "Tatear piña en sartén caliente",
+          "Mezclar panceta con glaseado",
+          "Emplatar con piña, microcilantro",
+          "Decorar con pétalos de hibiscus"
+        ]
+      },
+      {
+        name: "Brie al Horno con Jamaica + Pasilla",
+        product: "Xanda Jamaica con chile pasilla",
+        image: "./assets/gallery/brie.webp",
+        description: "Rueda de brie caliente y fundente coronada con Xanda Jamaica.",
+        result: "Pecanas tostadas y pimienta rosa. Pan brioche como acompañante.",
+        ingredients: [
+          "1 rueda brie (250g)",
+          "3 cdas Xanda Jamaica + chile pasilla",
+          "50g pecanas",
+          "Pimienta rosa en grano",
+          "Pan brioche",
+          "Miel (opcional)"
+        ],
+        instructions: [
+          "Precalentar horno a 180°C",
+          "Hacer cortes superficiales en cruz sobre el brie",
+          "Calentar Xanda ligeramente",
+          "Colocar brie en refractario pequeño",
+          "Hornear 12-15 min (debe estar fundente por dentro)",
+          "Sacar y coronar generosamente con Xanda",
+          "Esparcir pecanas tostadas y pimienta rosa",
+          "Servir inmediatamente con pan brioche tostado",
+          "Opcional: hilo de miel al final"
+        ]
+      }
+    ];
+
+    function openRecipe(index) {
+      const recipe = recipes[index];
+      const modal = document.getElementById('recipeModal');
+
+      // Populate modal
+      document.getElementById('modalRecipeName').textContent = recipe.name;
+      document.getElementById('modalRecipeProduct').textContent = recipe.product;
+      document.getElementById('modalRecipeImage').src = recipe.image;
+      document.getElementById('modalRecipeDescription').textContent = recipe.description;
+      document.getElementById('modalRecipeResult').textContent = recipe.result;
+
+      // Populate ingredients
+      const ingredientsList = document.getElementById('modalIngredients');
+      ingredientsList.innerHTML = recipe.ingredients.map(ing => `<li>${ing}</li>`).join('');
+
+      // Populate instructions
+      const instructionsList = document.getElementById('modalInstructions');
+      instructionsList.innerHTML = recipe.instructions.map((inst, i) =>
+        `<li><span class="step-number">${i + 1}</span>${inst}</li>`
+      ).join('');
+
+      // Show modal
+      modal.classList.remove('hidden');
+      modal.classList.add('modal-active');
+      document.body.style.overflow = 'hidden';
+
+      // Pause carousel
+      clearInterval(autoSlideInterval);
+    }
+
+    function closeRecipe() {
+      const modal = document.getElementById('recipeModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('modal-active');
+      document.body.style.overflow = '';
+
+      // Resume carousel
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Close on click outside
+    document.getElementById('recipeModal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'recipeModal') closeRecipe();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeRecipe();
+    });
   </script>
+
+  <!-- Recipe Modal -->
+  <div id="recipeModal" class="recipe-modal hidden" role="dialog" aria-labelledby="modalRecipeName" aria-hidden="true">
+    <div class="recipe-modal-overlay" onclick="closeRecipe()"></div>
+    <div class="recipe-modal-content">
+
+      <!-- Close Button -->
+      <button onclick="closeRecipe()" class="recipe-modal-close" aria-label="Cerrar receta">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Modal Header with Image -->
+      <div class="recipe-modal-header">
+        <img id="modalRecipeImage" src="" alt="" class="recipe-modal-image">
+        <div class="recipe-modal-header-overlay"></div>
+        <div class="recipe-modal-header-content">
+          <span id="modalRecipeProduct" class="recipe-modal-product"></span>
+          <h2 id="modalRecipeName" class="recipe-modal-title"></h2>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="recipe-modal-body">
+
+        <!-- Description -->
+        <div class="recipe-section">
+          <p id="modalRecipeDescription" class="recipe-description"></p>
+          <p id="modalRecipeResult" class="recipe-result"></p>
+        </div>
+
+        <!-- Ingredients & Instructions -->
+        <div class="recipe-content-grid">
+
+          <!-- Ingredients -->
+          <div class="recipe-section">
+            <h3 class="recipe-section-title">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+              Ingredientes
+            </h3>
+            <ul id="modalIngredients" class="recipe-list ingredients-list"></ul>
+          </div>
+
+          <!-- Instructions -->
+          <div class="recipe-section">
+            <h3 class="recipe-section-title">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+              Preparación
+            </h3>
+            <ol id="modalInstructions" class="recipe-list instructions-list"></ol>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="recipe-cta">
+          <p class="text-neutral-300 mb-4">¿Listo para recrear esta receta?</p>
+          <a href="#sabores" onclick="closeRecipe()" class="btn-primary-large">
+            Comprar Xanda ahora
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 
 </body>
 </html>
