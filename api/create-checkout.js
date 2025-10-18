@@ -3,15 +3,21 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 module.exports = async (req, res) => {
   // Enable CORS for your domain
   const allowedOrigins = [
+    'https://xanda.com.mx',
+    'https://www.xanda.com.mx',
     'https://xanda.vercel.app',
+    'https://xanda-mx.vercel.app',
     'https://antonio-ms-coder.github.io',
     'http://localhost:3000',
     'http://localhost:8888'
   ];
 
-  const origin = req.headers.origin;
+  const origin = req.headers.origin || req.headers.referer?.replace(/\/$/, '');
   if (allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    // Allow same-origin requests (when origin header is not sent)
+    res.setHeader('Access-Control-Allow-Origin', '*');
   }
 
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
