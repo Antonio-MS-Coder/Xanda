@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra Exitosa - Xanda</title>
+  <meta name="description" content="Gracias por tu compra en Xanda. Tu pedido ha sido confirmado.">
+  <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <style>
+    .success-icon {
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out 0.3s both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100">
+  <div class="min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="max-w-2xl w-full text-center">
+      <!-- Success Icon -->
+      <div class="mb-8 success-icon">
+        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-2xl">
+          <svg class="w-12 h-12 text-neutral-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="fade-in">
+        <h1 class="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">
+          ¡Gracias por tu compra!
+        </h1>
+        <p class="text-xl text-amber-300 mb-3">Tu pedido ha sido confirmado</p>
+        <p class="text-neutral-400 mb-8 max-w-lg mx-auto leading-relaxed">
+          Recibirás un correo de confirmación con los detalles de tu compra y el seguimiento de tu envío a la brevedad.
+        </p>
+
+        <!-- Order Info -->
+        <div class="bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 mb-8 max-w-md mx-auto">
+          <h2 class="text-lg font-semibold text-white mb-4">¿Qué sigue?</h2>
+          <div class="space-y-3 text-left">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <p class="text-sm text-neutral-300">
+                Recibirás un <strong class="text-white">correo de confirmación</strong> con tu número de pedido
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+              </svg>
+              <p class="text-sm text-neutral-300">
+                Tu pedido será <strong class="text-white">procesado y enviado</strong> en 1-2 días hábiles
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <p class="text-sm text-neutral-300">
+                Recibirás <strong class="text-white">información de rastreo</strong> cuando tu pedido sea enviado
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="bg-neutral-900/30 border border-neutral-800/50 rounded-xl p-6 mb-8 max-w-md mx-auto">
+          <p class="text-sm text-neutral-400 mb-3">¿Tienes alguna pregunta sobre tu pedido?</p>
+          <a href="mailto:hola@xanda.mx" class="text-amber-300 hover:text-amber-400 font-semibold transition-colors inline-flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            hola@xanda.mx
+          </a>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="./index.html" class="btn-primary-large inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+            Volver al inicio
+          </a>
+          <a href="https://instagram.com/xanda.mx" target="_blank" rel="noopener noreferrer" class="btn-secondary-large inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Síguenos en Instagram
+          </a>
+        </div>
+
+        <!-- Thank You Message -->
+        <div class="mt-12 pt-8 border-t border-neutral-800/50">
+          <p class="text-neutral-500 text-sm">
+            Gracias por apoyar productos artesanales mexicanos
+          </p>
+          <img src="./assets/logo.svg" alt="Xanda" class="h-6 w-auto mx-auto mt-4 opacity-50">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Clear cart after successful purchase
+    localStorage.removeItem('xandaCart');
+
+    // Optional: Track successful purchase with analytics
+    // Example: gtag('event', 'purchase', { ... });
+  </script>
+</body>
+</html>
