@@ -1,0 +1,663 @@
+/**
+ * Xanda - Premium Gourmet Brand Styles
+ * Design System: Black Matte + Gold Accents
+ * Typography: Playfair Display (Editorial) + Inter (Modern)
+ */
+
+/* ==========================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ========================================== */
+
+:root {
+  /* Brand Colors */
+  --color-gold: #CFAE63;
+  --color-gold-light: #FCD34D;
+  --color-gold-dark: #B8963E;
+  --color-black-matte: #0a0a0a;
+  --color-neutral-950: #0f0f0f;
+  --color-neutral-900: #171717;
+  --color-neutral-800: #262626;
+  --color-neutral-700: #404040;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-100: #f5f5f5;
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, #CFAE63 0%, #FCD34D 100%);
+  --gradient-dark: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  --shadow-gold: 0 10px 40px -10px rgba(207, 174, 99, 0.4);
+
+  /* Typography */
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==========================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ========================================== */
+
+/* Primary Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-black-matte);
+  background: var(--gradient-gold);
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #FDE68A 0%, #FCD34D 100%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Large Primary Button */
+.btn-primary-large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.125rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-black-matte);
+  background: var(--gradient-gold);
+  border-radius: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+.btn-primary-large:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-neutral-100);
+  background: transparent;
+  border: 1px solid var(--color-neutral-700);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--color-neutral-900);
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+  transform: translateY(-1px);
+}
+
+/* Large Secondary Button */
+.btn-secondary-large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.125rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-neutral-100);
+  background: transparent;
+  border: 1px solid var(--color-neutral-700);
+  border-radius: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-secondary-large:hover {
+  background: var(--color-neutral-900);
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+/* CTA Button in Navbar */
+.btn-cta-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  background: var(--color-neutral-900);
+  border: 1px solid rgba(207, 174, 99, 0.3);
+  border-radius: 0.75rem;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-cta-nav:hover {
+  background: var(--color-neutral-800);
+  border-color: var(--color-gold);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+.nav-link {
+  position: relative;
+  transition: color var(--transition-base);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+  color: var(--color-neutral-100);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+#navbar.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================
+   CARDS & CONTAINERS
+   ========================================== */
+
+/* Product Card */
+.product-card {
+  background: var(--color-black-matte);
+  border: 1px solid var(--color-neutral-800);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all var(--transition-slow);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(207, 174, 99, 0.4);
+  box-shadow: var(--shadow-2xl);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* Product Image */
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+/* Product Title */
+.product-title {
+  transition: color var(--transition-base);
+}
+
+.product-card:hover .product-title {
+  color: var(--color-gold-light);
+}
+
+/* General Card */
+.card {
+  background: var(--color-black-matte);
+  border: 1px solid var(--color-neutral-800);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: rgba(207, 174, 99, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Hero Card */
+.hero-card {
+  position: relative;
+  transition: transform var(--transition-slow);
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+}
+
+.hero-card img {
+  transition: transform var(--transition-slow);
+}
+
+.hero-card:hover img {
+  transform: scale(1.02);
+}
+
+/* Gift Box Card */
+.gift-box-card {
+  position: relative;
+  transition: transform var(--transition-slow);
+}
+
+.gift-box-card:hover {
+  transform: scale(1.02);
+}
+
+/* Fact Card */
+.fact-card {
+  background: var(--color-neutral-950);
+  border: 1px solid var(--color-neutral-800);
+  border-radius: 0.875rem;
+  padding: 1.25rem;
+  transition: all var(--transition-base);
+}
+
+.fact-card:hover {
+  background: var(--color-neutral-900);
+  border-color: rgba(207, 174, 99, 0.3);
+  transform: translateX(4px);
+}
+
+/* Value Card */
+.value-card {
+  transition: all var(--transition-base);
+}
+
+.value-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Gift Feature */
+.gift-feature {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(38, 38, 38, 0.5);
+  transition: all var(--transition-base);
+}
+
+.gift-feature:last-child {
+  border-bottom: none;
+}
+
+.gift-feature:hover {
+  padding-left: 0.5rem;
+}
+
+/* ==========================================
+   TAGS & BADGES
+   ========================================== */
+
+.tag {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-neutral-400);
+  background: var(--color-neutral-900);
+  border: 1px solid var(--color-neutral-800);
+  border-radius: 0.5rem;
+  transition: all var(--transition-base);
+}
+
+.tag:hover {
+  color: var(--color-gold-light);
+  border-color: rgba(207, 174, 99, 0.4);
+  background: rgba(207, 174, 99, 0.1);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer-link {
+  transition: color var(--transition-base);
+}
+
+.footer-link:hover {
+  color: var(--color-gold-light);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: var(--color-neutral-900);
+  border: 1px solid var(--color-neutral-800);
+  color: var(--color-neutral-400);
+  transition: all var(--transition-base);
+}
+
+.social-link:hover {
+  background: var(--color-neutral-800);
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+/* Fade In Up Animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay for sequential animations */
+.delay-100 {
+  transition-delay: 100ms;
+}
+
+.delay-200 {
+  transition-delay: 200ms;
+}
+
+.delay-300 {
+  transition-delay: 300ms;
+}
+
+/* Floating Animation (for badges, etc.) */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Shimmer Effect (for loading states) */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-900) 0%,
+    var(--color-neutral-800) 50%,
+    var(--color-neutral-900) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background: var(--color-gold-light);
+  color: var(--color-black-matte);
+}
+
+::-moz-selection {
+  background: var(--color-gold-light);
+  color: var(--color-black-matte);
+}
+
+/* Focus Visible (Accessibility) */
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Remove default focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN ENHANCEMENTS
+   ========================================== */
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .hero-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .fade-in-up {
+    transform: translateY(40px);
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1024px) {
+  /* Enhanced hover effects on larger screens */
+  .product-card:hover {
+    transform: translateY(-12px) scale(1.02);
+  }
+}
+
+/* ==========================================
+   STRIPE BUY BUTTON CUSTOMIZATION
+   ========================================== */
+
+/* Style the Stripe Buy Button container for better integration */
+stripe-buy-button {
+  display: block;
+  width: 100%;
+}
+
+/* ==========================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================== */
+
+/* Reduce motion for users who prefer it (Accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-in-up {
+    opacity: 1;
+    transform: none;
+  }
+
+  .floating {
+    animation: none;
+  }
+}
+
+/* GPU Acceleration for smooth animations */
+.product-card,
+.hero-card,
+.gift-box-card,
+.btn-primary,
+.btn-secondary {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+  /* Hide non-essential elements when printing */
+  header,
+  footer,
+  .btn-primary,
+  .btn-secondary,
+  .social-link,
+  #scroll-progress {
+    display: none;
+  }
+
+  /* Optimize colors for printing */
+  body {
+    background: white;
+    color: black;
+  }
+
+  .product-card,
+  .card,
+  .fact-card {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+}
+
+/* ==========================================
+   DARK MODE (ALREADY DEFAULT)
+   ========================================== */
+
+/* The entire design is dark mode by default.
+   If you want to add a light mode toggle in the future,
+   you can use CSS custom properties to create a theme switcher. */
+
+/* Example for future light mode:
+[data-theme="light"] {
+  --color-black-matte: #ffffff;
+  --color-neutral-950: #fafafa;
+  --color-neutral-900: #f5f5f5;
+  --color-neutral-800: #e5e5e5;
+  --color-neutral-100: #0a0a0a;
+}
+*/
