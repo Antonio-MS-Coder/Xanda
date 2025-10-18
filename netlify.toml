@@ -1,0 +1,27 @@
+# Netlify configuration for Xanda
+
+[build]
+  # Directory where Netlify Functions are located
+  functions = "netlify/functions"
+
+  # Publish directory (where your site files are)
+  publish = "."
+
+[build.environment]
+  # Node.js version to use
+  NODE_VERSION = "18"
+
+# Redirects for clean URLs (optional)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"

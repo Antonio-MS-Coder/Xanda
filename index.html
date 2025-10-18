@@ -1499,18 +1499,12 @@
       localStorage.setItem('xandaCart', JSON.stringify(cart));
     }
 
-    // Checkout Function
+    // Checkout Function - Using Netlify Serverless Function
     async function checkout() {
       if (cart.length === 0) {
         alert('Tu carrito está vacío');
         return;
       }
-
-      // Create line items for Stripe using Price IDs
-      const lineItems = cart.map(item => ({
-        price: item.priceId,
-        quantity: item.quantity
-      }));
 
       try {
         // Show loading state
@@ -1519,28 +1513,41 @@
         checkoutBtn.innerHTML = 'Procesando...';
         checkoutBtn.disabled = true;
 
-        // Redirect to Stripe Checkout
-        const { error } = await stripe.redirectToCheckout({
-          lineItems: lineItems,
-          mode: 'payment',
-          successUrl: window.location.origin + '/success.html',
-          cancelUrl: window.location.origin + '/index.html',
-          locale: 'es',
-          billingAddressCollection: 'required',
-          shippingAddressCollection: {
-            allowedCountries: ['MX']
-          }
+        // Prepare line items for Stripe
+        const lineItems = cart.map(item => ({
+          price: item.priceId,
+          quantity: item.quantity
+        }));
+
+        // Call serverless function to create Checkout Session
+        const response = await fetch('/api/create-checkout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ lineItems })
         });
 
-        if (error) {
-          console.error('Error:', error);
-          alert('Hubo un error al procesar tu compra. Por favor intenta de nuevo.');
-          checkoutBtn.innerHTML = originalText;
-          checkoutBtn.disabled = false;
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.error || 'Failed to create checkout session');
         }
+
+        const { url } = await response.json();
+
+        // Redirect to Stripe Checkout
+        window.location.href = url;
+
       } catch (err) {
         console.error('Checkout error:', err);
         alert('Hubo un error al procesar tu compra. Por favor intenta de nuevo.');
+
+        // Reset button state
+        const checkoutBtn = event.target;
+        if (checkoutBtn) {
+          checkoutBtn.innerHTML = 'Proceder al pago';
+          checkoutBtn.disabled = false;
+        }
       }
     }
 
