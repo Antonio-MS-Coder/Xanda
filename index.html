@@ -1346,25 +1346,25 @@
     // Product Configuration with your actual Stripe Price IDs
     const products = {
       jamaica: {
-        productId: 'prod_TG0SGO97754wHh',
+        priceId: 'price_1SJURhAk4Vo7mfNIm6xTZvHd',
         name: 'Xanda Jamaica con chile de árbol y sal de gusano',
         price: 299,
         image: './assets/jamaica.webp'
       },
       cebolla: {
-        productId: 'prod_TG0Uw7hpwBTiaF',
+        priceId: 'price_1SJUTFAk4Vo7mfNIrFFaPNZM',
         name: 'Xanda Cebolla caramelizada con tocino ahumado',
         price: 299,
         image: './assets/cebolla.webp'
       },
       arandano: {
-        productId: 'prod_TG0VUF5KsWWiGM',
+        priceId: 'price_1SJUU8Ak4Vo7mfNIMRj48G0I',
         name: 'Xanda Arándano con mezcal y sal de gusano',
         price: 299,
         image: './assets/arandano.webp'
       },
       giftbox: {
-        productId: 'prod_TG0WacnwhS0pAJ',
+        priceId: 'price_1SJUVAAk4Vo7mfNIuqVT98G8',
         name: 'Xanda Gift Box - Edición Regalo',
         price: 799,
         image: './assets/giftbox.webp'
@@ -1380,7 +1380,7 @@
       if (!product) return;
 
       // Check if product already in cart
-      const existingItem = cart.find(item => item.productId === product.productId);
+      const existingItem = cart.find(item => item.priceId === product.priceId);
 
       if (existingItem) {
         existingItem.quantity += 1;
@@ -1506,13 +1506,9 @@
         return;
       }
 
-      // Create line items for Stripe - using product IDs with quantity
+      // Create line items for Stripe using Price IDs
       const lineItems = cart.map(item => ({
-        price_data: {
-          currency: 'mxn',
-          product: item.productId,
-          unit_amount: item.price * 100, // Convert to centavos
-        },
+        price: item.priceId,
         quantity: item.quantity
       }));
 
