@@ -1499,19 +1499,22 @@
       localStorage.setItem('xandaCart', JSON.stringify(cart));
     }
 
-    // Checkout Function - Using Netlify Serverless Function
+    // Checkout Function - Using Vercel Serverless Function
     async function checkout() {
       if (cart.length === 0) {
         alert('Tu carrito está vacío');
         return;
       }
 
+      // Find the checkout button to show loading state
+      const checkoutBtn = document.querySelector('button[onclick*="checkout"]');
+
       try {
         // Show loading state
-        const checkoutBtn = event.target;
-        const originalText = checkoutBtn.innerHTML;
-        checkoutBtn.innerHTML = 'Procesando...';
-        checkoutBtn.disabled = true;
+        if (checkoutBtn) {
+          checkoutBtn.innerHTML = 'Procesando...';
+          checkoutBtn.disabled = true;
+        }
 
         // Prepare line items for Stripe
         const lineItems = cart.map(item => ({
@@ -1529,8 +1532,8 @@
         });
 
         if (!response.ok) {
-          const error = await response.json();
-          throw new Error(error.error || 'Failed to create checkout session');
+          const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+          throw new Error(errorData.error || 'Failed to create checkout session');
         }
 
         const { url } = await response.json();
@@ -1543,7 +1546,6 @@
         alert('Hubo un error al procesar tu compra. Por favor intenta de nuevo.');
 
         // Reset button state
-        const checkoutBtn = event.target;
         if (checkoutBtn) {
           checkoutBtn.innerHTML = 'Proceder al pago';
           checkoutBtn.disabled = false;
